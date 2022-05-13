@@ -30,8 +30,10 @@ func main() {
 			fmt.Println("You have selected Make a new expense")
 		case "3":
 			fmt.Println("You have selected Show all incomes")
+			read("./fixtures/Income.ledger")
 		case "4":
 			fmt.Println("You have selected Show all expenses")
+			read("fixtures/Expenses.ledger")
 		case "5":
 			fmt.Println("You have selected exit")
 			fmt.Println("Bye!")

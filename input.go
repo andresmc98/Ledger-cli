@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -55,6 +57,9 @@ type Accountable interface {
 type Income struct {
 	Data string
 }
+type Expense struct {
+	Data string
+}
 
 func (i *Income) GetData() string {
 	return "soy un income muy sexy"
@@ -69,4 +74,22 @@ func readIncomes(path string) []*Income {
 		}
 	}
 	return incomesOutput
+}
+func readExpenses(path string) []*Expense {
+	scanner := fileScanner[path]
+	expensesOutput := []*Expense{}
+	for scanner.Scan() {
+		if strings.TrimSpace(string(scanner.Text()[0])) != "" {
+			expensesOutput = append(expensesOutput, &Expense{})
+		}
+	}
+	return expensesOutput
+}
+func read(path string) {
+	dataBytes, err := ioutil.ReadFile(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	dataStr := string(dataBytes)
+	fmt.Println(dataStr)
 }
