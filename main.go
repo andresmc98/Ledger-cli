@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -24,7 +23,17 @@ func main() {
 		fmt.Println(userInput)
 		fmt.Print("=>")
 
-		if strings.Compare(userInput, "5") == 0 {
+		switch userInput {
+		case "1":
+			fmt.Println("You have selected Make a new income")
+		case "2":
+			fmt.Println("You have selected Make a new expense")
+		case "3":
+			fmt.Println("You have selected Show all incomes")
+		case "4":
+			fmt.Println("You have selected Show all expenses")
+		case "5":
+			fmt.Println("You have selected exit")
 			fmt.Println("Bye!")
 			os.Exit(0)
 		}
