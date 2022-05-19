@@ -1,2 +1,6 @@
 # Ledger-cli
-my version of ledger cli
+
+Version incompleta aun de ledeger...
+
+se ocupan correr el main.go y input.go para que se ejecute
+correctmante, solo tiene soporte la opcion 3,4,5 dentro del cli...
